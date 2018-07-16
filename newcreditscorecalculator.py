@@ -50,7 +50,7 @@ def ncscalculator(currentScore, newDebt):
   #Inquiries and mix of credit are 10% each
   inin = ine * 0.10
   # payment history is out of 1
-  paymentHistory = 1
+  newPaymentHistory = 1
   newScore = cc * (0.1 + (bb + ll + chch + inin))
   
 print newDebt(oldDebt)
