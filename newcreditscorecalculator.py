@@ -40,7 +40,7 @@ def ncscalculator(currentScore, newDebt):
   n = newCreditHistoryLength
   l = levelOfDebt
   ch = newCreditCardHistoryLength
-  in = numberOfInquiries
+  ine = numberOfInquiries
   # Payment history counts 35% of your score
   bb = b * 0.35
   #Level of debt counts 30% of your score
