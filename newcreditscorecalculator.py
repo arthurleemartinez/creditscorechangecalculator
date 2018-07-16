@@ -55,6 +55,3 @@ def ncscalculator(currentScore, newDebt):
   
 print newDebt(oldDebt)
 print ncscalculator(625, newDebt): 
-  
-  
-
