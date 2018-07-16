@@ -54,4 +54,4 @@ def ncscalculator(currentScore, newDebt):
   newScore = cc * (0.1 + (bb + ll + chch + inin))
   
 print newDebt(oldDebt)
-print ncscalculator(625, newDebt): 
+print ncscalculator(625, newDebt(oldDebt)) 
