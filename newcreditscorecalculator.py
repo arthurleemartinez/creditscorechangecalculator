@@ -48,7 +48,7 @@ def ncscalculator(currentScore, newDebt):
   #Length of credit history is 15% of your score
   chch = ch * 0.15
   #Inquiries and mix of credit are 10% each
-  inin = in * 0.10
+  inin = ine * 0.10
   # payment history is out of 1
   paymentHistory = 1
   newScore = cc * (0.1 + (bb + ll + chch + inin))
