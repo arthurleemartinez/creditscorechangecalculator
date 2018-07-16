@@ -35,23 +35,23 @@ def newDebt(oldDebt):
 newPaymentHistory = 1 
 
 def ncscalculator(currentScore, newDebt): 
-  cc = currentScore
-  b = newPaymentHistory
-  n = newCreditHistoryLength
-  l = levelOfDebt
-  ch = newCreditCardHistoryLength
-  ine = numberOfInquiries
-  # Payment history counts 35% of your score
-  bb = b * 0.35
-  #Level of debt counts 30% of your score
-  ll = l * 0.30 
-  #Length of credit history is 15% of your score
-  chch = ch * 0.15
-  #Inquiries and mix of credit are 10% each
-  inin = ine * 0.10
-  # payment history is out of 1
-  newPaymentHistory = 1
-  newScore = cc * (0.1 + (bb + ll + chch + inin))
+    cc = currentScore
+    b = newPaymentHistory
+    n = newCreditHistoryLength
+    l = levelOfDebt
+    ch = newCreditCardHistoryLength
+    ine = numberOfInquiries
+    # Payment history counts 35% of your score
+    bb = b * 0.35
+    #Level of debt counts 30% of your score
+    ll = l * 0.30 
+    #Length of credit history is 15% of your score
+    chch = ch * 0.15
+    #Inquiries and mix of credit are 10% each
+    inin = ine * 0.10
+    # payment history is out of 1
+    newPaymentHistory = 1
+    newScore = cc * (0.1 + (bb + ll + chch + inin))
   
 print newDebt(oldDebt)
 print ncscalculator(625, newDebt(oldDebt)) 
