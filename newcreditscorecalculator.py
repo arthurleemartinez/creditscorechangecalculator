@@ -13,7 +13,7 @@ belowAverage = 0.25
 average = .50
 good = .75
 excellent = 1
-ccR = currentScore 
+
 currentDebt = currentCarNote + currentCardBalances
 newCreditHistoryLength = currentCreditHistoryLength + monthsPassed
 oldDebt = currentCarNote + currentCardBalance
@@ -25,6 +25,7 @@ monthsPassed = 24
 currentCarNote = 11126
 currentCardBalance = 687
 b = newPaymentHistory
+l = levelOfDebt
 # this is a integer in a range of 0-1 based on percentage of max credit score you have
 zeroOne = (cc - 300) / 850
 newCreditCardPayments = 76
@@ -37,22 +38,23 @@ def newDebt(oldDebt):
     zz = currentCardBalance - newCreditCardPayments + (currentCarNote - z)
     return zz
 
-def changeLetter(newPaymentHistory, levelOfDebt, newCreditCardHistoryLength, ine):
+def changeLetter(b, levelOfDebt, newCreditCardHistoryLength, ine):
     if newPaymentHistory > 0.99:
-        bR
+        bR = 1
+    elif newPaymentHistory > 0.90:
+        bR = .75 
+    elif levelOfDebt >    
 
 # this will be a percentage converted to a range of 0-1
 newPaymentHistory = 1 
 # this is a function that takes variables and calculates a new theoretical score
 def ncscalculator(currentScore, newDebt): 
     cc = currentScore
-    
     n = newCreditHistoryLength
-    l = levelOfDebt
     ch = newCreditCardHistoryLength
     ine = numberOfInquiries
     # Payment history counts 35% of your score
-    bb = b * 0.35
+    bb = bR * 0.35
     #Level of debt counts 30% of your score
     ll = l * 0.30 
     #Length of credit history is 15% of your score
