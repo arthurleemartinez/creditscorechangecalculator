@@ -36,16 +36,16 @@ discover = 200
 synchrony = 1200
 cardLimits = discover + synchrony
 levelOfDebt = newDebt(oldDebt)
-totalCredit = carLoan + cardLimits
+totalCredit = cardLimits
 
 # this will be a percentage converted to a range of 0-1
 newPaymentHistory = 1 
 
 def newDebt(oldDebt):
     z = monthsPassed * carPaymentMonthly
-    zz = currentCardBalance - newCreditCardPayments + (currentCarNote - z)
-    zzz = zz / totalCredit
-    return zzz
+    #zz = currentCardBalance - newCreditCardPayments + (currentCarNote - z)
+    zz = (currentCardBalance - newCreditCardPayments) / totalCredit
+    return zz
 
 def changeLetter(b, l, ch, ine):
     if b > 0.99:
