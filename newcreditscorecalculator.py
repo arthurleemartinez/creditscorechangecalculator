@@ -50,9 +50,17 @@ def newDebt(oldDebt):
 def changeLetter(b, l, ch, ine):
     if b > 0.99:
         bR = 1
+        isFunctionTrue = True
     elif b > 0.90:
         bR = .75 
-    elif l >    
+        isFunctionTrue = True    
+    elif l < 0.10    
+        isFunctionTrue = True
+# we only want this function to run if the value of certain variables match our specific condition
+def conditionalFunctionCall(isFunctionTrue):
+    while isFunctionTrue = True:
+        
+    
 
 # this will be a percentage converted to a range of 0-1
 newPaymentHistory = 1 
