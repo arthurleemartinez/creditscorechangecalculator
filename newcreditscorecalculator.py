@@ -20,6 +20,7 @@ newCarNote = currentCarNote - carPaymentMonthly
 monthsPassed = 24
 numberOfInquiries = 0
 currentScore = 625
+currentScoreCoefficient = csc
 monthsPassed = 24
 currentCarNote = 11126
 currentCardBalance = 687
@@ -28,12 +29,12 @@ levelOfDebt = newDebt(oldDebt)
 
 def newDebt(oldDebt):
     z = monthsPassed * carPaymentMonthly
-    zz = currentCardBalance - newCreditCardPayments 
+    zz = currentCardBalance - newCreditCardPayments + (currentCarNote - z)
     return zz
     
 # this will be a percentage converted to a range of 0-1
 newPaymentHistory = 1 
-
+# this is a function that takes variables and calculates a new theoretical score
 def ncscalculator(currentScore, newDebt): 
     cc = currentScore
     b = newPaymentHistory
