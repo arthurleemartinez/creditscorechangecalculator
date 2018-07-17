@@ -61,8 +61,9 @@ def ncscalculator(currentScore, newDebt):
     inin = ine * 0.10
     # payment history is out of 1
     newPaymentHistory = 1
+    nscomponent = 0.1 + (bb + ll + chch + inin)
     # this is a variable that gets your number out 1 to multiple by 550 to add to 300 to get newScore
-    ns = (zeroOne * (0.1 + (bb + ll + chch + inin))
+    ns = zeroOne * nscomponent
     newScore = (ns * 550) + 300
 print newDebt(oldDebt)
 print ncscalculator(625, newDebt(oldDebt)) 
