@@ -51,13 +51,13 @@ Types of credit used (10%): the more types of credit you have, the better.
     x1 = 
     x2 = x1 * (850 - 300)
     x2 + 300 = new_creditscore
-  
     a = 
     300 + a
 # what your score would be if fico used this program (pro_tip = they_wont)
 
-def standard_credit_score(ph, amounts_owed, ch, new_credit(recent_applications, new_accounts)):
-    score = 300 + (550 * (ph + amounts_owed + ch + nc))
+def standard_credit_score(ph, amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+    score = 300 + (550 * (ph + amounts_owed + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
     return score
-def new_credit_score(ph, amounts_owed, ch, nc):
+def new_credit_score(ph, amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
     new_score = 
+    return new_score
