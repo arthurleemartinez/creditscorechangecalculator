@@ -39,7 +39,7 @@ def has_car_loan(car_loan):
 def has_personal_loan(personal_loan):
    if personal_loan > 0:
         pl = True
-    else:
+   else:
         pl = False
     return pl
 
