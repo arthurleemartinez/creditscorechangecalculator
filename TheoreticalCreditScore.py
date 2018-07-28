@@ -37,8 +37,13 @@ def credit_history(length_credit):
 # how many new accounts you have opened, and many times you have applied for credit.
 def new_credit(recent_applications, new_accounts): 
     if (recent_applications + new_acounts) < 3:
-      nc = 0.10 * 1
+        nc = 0.10 * 1
     elif (recent_applications + new_acounts) < 7:
+        nc = 0.10 * 0.75
+    elif (recent_applications + new_acounts) < 12:
+        nc = 0.10 * 0.50 
+    elif (recent_applications + new_acounts) < 14:
+        nc = 0.10 * 0.25
     return nc
     
 Types of credit used (10%): the more types of credit you have, the better.
@@ -51,7 +56,7 @@ Types of credit used (10%): the more types of credit you have, the better.
     300 + a
 # what your score would be if fico used this program (pro_tip = they_wont)
 
-def standard_credit_score(ph, amounts_owed, ch, nc):
+def standard_credit_score(ph, amounts_owed, ch, new_credit(recent_applications, new_accounts)):
     score = 300 + (550 * (ph + amounts_owed + ch + nc))
     return score
 def new_credit_score(ph, amounts_owed, ch, nc):
