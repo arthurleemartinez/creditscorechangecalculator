@@ -31,7 +31,7 @@ def amount_owed_convert(card_debt, car_loan, mortage, personal_loan):
 
 # Length of credit history (15%): the longer you’ve had credit, the better
 def credit_history(length_credit):
-    ch = ch1 * 0.15
+    ch = credit_ratio(length_credit) * 0.15
     return ch 
 
 # how many new accounts you have opened, and many times you have applied for credit.
@@ -48,6 +48,7 @@ def new_credit(recent_applications, new_accounts):
     
 # The more types of credit you have, the better.
 def credit_types(car_loan, personal_loan, card_debt, mortgage):
+    ct = 
      
 
 
