@@ -46,18 +46,15 @@ def new_credit(recent_applications, new_accounts):
         nc = 0.10 * 0.25
     return nc
     
-Types of credit used (10%): the more types of credit you have, the better.
-  mortgage, car loan, personal loan, credit card = 2.5 each
-    x1 = 
-    x2 = x1 * (850 - 300)
-    x2 + 300 = new_creditscore
-    a = 
-    300 + a
-# what your score would be if fico used this program (pro_tip = they_wont)
+# The more types of credit you have, the better.
+def credit_types(car_loan, personal_loan, card_debt, mortgage):
+     
 
-def standard_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
-    score = 300 + (550 * (payment_history(ph) + amounts_owed + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
-    return score
-def new_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
-    new_score = 
+
+# def new_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+    new_score = 300 + 
     return new_score
+# alexa play despacito
+def standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+    score = 300 + (550 * (credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph) + amount_owed_convert(card_debt, car_loan, mortage, personal_loan) + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
+    return score
