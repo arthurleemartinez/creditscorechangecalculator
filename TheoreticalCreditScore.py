@@ -77,8 +77,8 @@ def new_credit(recent_applications, new_accounts):
     
 # The more types of credit you have, the better.
 # needs booleans as function variables for if statement
-def credit_types(has_car_loan(car_loan), has_personal_loan(personal_loan), has_card(card_debt), has_mortgage(mortgage)):
-    if (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == True) and (has_personal_loan(personal_loan) == True) and (has_card(card_debt) == True):
+def credit_types (has_car_loan(car_loan), has_personal_loan(personal_loan), has_card(card_debt), has_mortgage(mortgage)):
+    if (has_mortgage (mortgage) == False) and (has_car_loan(car_loan) == True) and (has_personal_loan(personal_loan) == True) and (has_card(card_debt) == True):
         ct = 0.10 * 0.75
     elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == False) and (has_personal_loan(personal_loan) == True) and (has_card(card_debt) == True):
         ct = 0.10 * 0.75
@@ -115,7 +115,7 @@ def credit_types(has_car_loan(car_loan), has_personal_loan(personal_loan), has_c
     #return new_score
 
 # alexa play despacito
-def standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+def standard_credit_score (credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts)):
     score = 300 + (550 * (credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph) + amount_owed_convert(card_debt, car_loan, mortage, personal_loan) + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
     return score
-standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts))
+standard_credit_score (credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts))
