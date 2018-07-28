@@ -21,8 +21,8 @@ def credit_ratio(length_credit):
   
 # function that converts paymnent history into component of new credit score equation
 def payment_history(ph):
-    ph = .35 * ph
-    return ph
+    ph1 = .35 * ph
+    return ph1
 
 # convert total debt to a number between 0 and 1 that will become component of new equation
 def amount_owed_convert(card_debt, car_loan, mortage, personal_loan):
@@ -55,9 +55,9 @@ Types of credit used (10%): the more types of credit you have, the better.
     300 + a
 # what your score would be if fico used this program (pro_tip = they_wont)
 
-def standard_credit_score(ph, amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
-    score = 300 + (550 * (ph + amounts_owed + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
+def standard_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+    score = 300 + (550 * (payment_history(ph) + amounts_owed + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
     return score
-def new_credit_score(ph, amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+def new_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
     new_score = 
     return new_score
