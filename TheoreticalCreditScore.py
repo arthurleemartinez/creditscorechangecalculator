@@ -8,10 +8,9 @@ car_loan = 11187
 mortgage = 0
 personal_loan = 0
 new_accounts = 4
-
 # number of inquiries in past year
 recent_applications = 4
-
+# represented as number of years
 length_credit = .33
 
 # length of credit represented as ratio of itself to 25 years
@@ -19,7 +18,7 @@ def credit_ratio(length_credit):
     ch1 = length_credit / 25
     return ch1
   
-# function that converts paymnent history into component of new credit score equation
+# converts paymnent history into component of new credit score equation
 def payment_history(ph):
     ph1 = .35 * ph
     return ph1
@@ -53,8 +52,9 @@ def credit_types(car_loan, personal_loan, card_debt, mortgage):
 
 
 # def new_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
-    new_score = 300 + 
-    return new_score
+    #new_score = 300 + 
+    #return new_score
+
 # alexa play despacito
 def standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts)):
     score = 300 + (550 * (credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph) + amount_owed_convert(card_debt, car_loan, mortage, personal_loan) + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
