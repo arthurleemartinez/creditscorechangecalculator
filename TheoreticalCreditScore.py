@@ -56,7 +56,7 @@ def payment_history():
 
 # convert total debt to a number between 0 and 1 that will become component of new equation
 def amount_owed_convert():
-    amounts_owed = (card_debt + car_loan + mortage + personal_loan) * .30
+    amounts_owed = (card_debt + car_loan + mortgage + personal_loan) * .30
     return amounts_owed
 
 
@@ -68,13 +68,13 @@ def credit_history():
 
 # how many new accounts you have opened, and many times you have applied for credit.
 def new_credit():
-    if (recent_applications + new_acounts) < 3:
+    if (recent_applications + new_accounts) < 3:
         nc = 0.10 * 1
-    elif (recent_applications + new_acounts) < 7:
+    elif (recent_applications + new_accounts) < 7:
         nc = 0.10 * 0.75
-    elif (recent_applications + new_acounts) < 12:
+    elif (recent_applications + new_accounts) < 12:
         nc = 0.10 * 0.50
-    elif (recent_applications + new_acounts) < 14:
+    elif (recent_applications + new_accounts) < 14:
         nc = 0.10 * 0.25
     return nc
 
