@@ -61,13 +61,13 @@ def amount_owed_convert():
 
 
 # Length of credit history (15%): the longer you’ve had credit, the better
-def credit_history(length_credit):
-    ch = credit_ratio(length_credit) * 0.15
+def credit_history():
+    ch = credit_ratio() * 0.15
     return ch
 
 
 # how many new accounts you have opened, and many times you have applied for credit.
-def new_credit(recent_applications, new_accounts):
+def new_credit():
     if (recent_applications + new_acounts) < 3:
         nc = 0.10 * 1
     elif (recent_applications + new_acounts) < 7:
@@ -81,46 +81,44 @@ def new_credit(recent_applications, new_accounts):
 
 # The more types of credit you have, the better.
 # needs booleans as function variables for if statement
-def credit_types(has_car_loan(car_loan), has_personal_loan(personal_loan), has_card(card_debt), has_mortgage(mortgage)
-
-):
-if (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == True) and (
-        has_personal_loan(personal_loan) == True) and (has_card(card_debt) == True):
+def credit_types():
+    if (has_mortgage() == False) and (has_car_loan() == True) and (
+        has_personal_loan() == True) and (has_card(card_debt) == True):
     ct = 0.10 * 0.75
-elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == False) and (
+    elif (has_mortgage() == True) and (has_car_loan() == False) and (
         has_personal_loan(personal_loan) == True) and (has_card(card_debt) == True):
-    ct = 0.10 * 0.75
-elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == True) and (
+        ct = 0.10 * 0.75
+    elif (has_mortgage() == True) and (has_car_loan() == True) and (
         has_personal_loan(personal_loan) == False) and (has_card(card_debt) == True):
-    ct = 0.10 * 0.75
-elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == True) and (
+        ct = 0.10 * 0.75
+    elif (has_mortgage() == True) and (has_car_loan(car_loan) == True) and (
         has_personal_loan(personal_loan) == True) and (has_card(card_debt) == False):
     ct = 0.10 * 0.75
-elif (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == False) and (
+elif (has_mortgage() == False) and (has_car_loan(car_loan) == False) and (
         has_personal_loan(personal_loan) == True) and (has_card(card_debt) == True):
     ct = 0.10 * 0.50
-elif (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == True) and (
+elif (has_mortgage() == False) and (has_car_loan(car_loan) == True) and (
         has_personal_loan(personal_loan) == False) and (has_card(card_debt) == True):
     ct = 0.10 * 0.50
-elif (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == True) and (
+elif (has_mortgage() == False) and (has_car_loan(car_loan) == True) and (
         has_personal_loan(personal_loan) == True) and (has_card(card_debt) == False):
     ct = 0.10 * 0.50
-elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == False) and (
+elif (has_mortgage() == True) and (has_car_loan(car_loan) == False) and (
         has_personal_loan(personal_loan) == True) and (has_card(card_debt) == False):
     ct = 0.10 * 0.50
-elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == True) and (
+elif (has_mortgage() == True) and (has_car_loan(car_loan) == True) and (
         has_personal_loan(personal_loan) == False) and (has_card(card_debt) == False):
     ct = 0.10 * 0.50
-elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == False) and (
+elif (has_mortgage() == True) and (has_car_loan(car_loan) == False) and (
         has_personal_loan(personal_loan) == False) and (has_card(card_debt) == True):
     ct = 0.10 * 0.50
-elif (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == False) and (
+elif (has_mortgage() == False) and (has_car_loan(car_loan) == False) and (
         has_personal_loan(personal_loan) == False) and (has_card(card_debt) == True):
     ct = 0.10 * 0.25
-elif (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == False) and (
+elif (has_mortgage() == False) and (has_car_loan(car_loan) == False) and (
         has_personal_loan(personal_loan) == True) and (has_card(card_debt) == False):
     ct = 0.10 * 0.25
-elif (has_mortgage(mortgage) == False) and (has_car_loan(car_loan) == True) and (
+elif (has_mortgage() == False) and (has_car_loan(car_loan) == True) and (
         has_personal_loan(personal_loan) == False) and (has_card(card_debt) == False):
     ct = 0.10 * 0.25
 elif (has_mortgage(mortgage) == True) and (has_car_loan(car_loan) == False) and (
@@ -141,8 +139,7 @@ def standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortg
     recent_applications, new_accounts)
 
 ):
-score = 300 + (550 * (
-            credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph) + amount_owed_convert(
+score = 300 + (550 * (credit_types() + payment_history(ph) + amount_owed_convert(
         card_debt, car_loan, mortage, personal_loan) + credit_history(length_credit) + new_credit(recent_applications,
                                                                                                   new_accounts)))
 return score
