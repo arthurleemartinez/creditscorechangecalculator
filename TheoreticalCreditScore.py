@@ -1,7 +1,7 @@
 # import modules/packages/libraries
-
 # set your initial personal global variables
 # ph = percentage of on-time payments represented as a decimal integer in range 0-1
+from typing import Any, Union
 ph = 1
 # if you have had card debt in past 2 weeks use 1 cent so the function will know you have a card
 card_debt = 687
@@ -13,8 +13,6 @@ new_accounts = 4
 recent_applications = 4
 # represented as number of years
 length_credit = .33
-
-
 # Variable to be used as function component that turns mortgage into boolean
 # These functions will turn ints into booleans
 def has_mortgage():
@@ -45,26 +43,18 @@ def has_personal_loan():
 def credit_ratio():
     ch1 = (length_credit / 25)
     return ch1
-
-
 # converts payment history into component of new credit score equation
 def payment_history():
     ph1 = .35 * ph
     return ph1
-
-
 # convert total debt to a number between 0 and 1 that will become component of new equation
 def amount_owed_convert():
     amounts_owed = (card_debt + car_loan + mortgage + personal_loan) * .30
     return amounts_owed
-
-
 # Length of credit history (15%): the longer you’ve had credit, the better
 def credit_history():
     ch = credit_ratio() * 0.15
     return ch
-
-
 # how many new accounts you have opened, and many times you have applied for credit.
 def new_credit() -> new_accounts:
     global nc
@@ -77,8 +67,6 @@ def new_credit() -> new_accounts:
     elif (recent_applications + new_accounts) < 14:
         nc = 0.10 * 0.25
     return nc
-
-
 # The more types of credit you have, the better.
 # needs booleans as function variables for if statement
 def credit_types():
@@ -114,17 +102,9 @@ def credit_types():
     else:
         ct = 0.10 * 1
     return ct
-
-
-# def new_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
-# new_score = 300 +
-# return new_score
-
-# alexa play despacito
 def standard_credit_score():
-    score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit(recent_applications, new_accounts)))
+    score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()))
     return score
-cttt = credit_types()
 payment_history()
-def standard_credit_score():
-    scs = credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()
+#def new_credit_score():
+#   scs = credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()
