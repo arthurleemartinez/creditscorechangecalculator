@@ -113,7 +113,7 @@ def credit_types():
         ct = 0.10 * 0.25
     else:
         ct = 0.10 * 1
-return ct
+    return ct
 
 
 # def new_credit_score(payment_history(ph), amounts_owed, credit_history(length_credit), new_credit(recent_applications, new_accounts)):
@@ -121,8 +121,9 @@ return ct
 # return new_score
 
 # alexa play despacito
-def standard_credit_score(credit_types() + payment_history(), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+def standard_credit_score(credit_types() + payment_history(), amount_owed_convert(), credit_history(), new_credit(recent_applications, new_accounts)):
+    score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit(recent_applications, new_accounts)))
+    return score
 
-score = 300 + (550 * (credit_types() + payment_history(ph) + amount_owed_convert(card_debt, car_loan, mortage, personal_loan) + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
-return score
-standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit())
+def standard_credit_score():
+    scs = credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()
