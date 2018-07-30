@@ -66,7 +66,7 @@ def credit_history():
 
 
 # how many new accounts you have opened, and many times you have applied for credit.
-def new_credit():
+def new_credit() -> new_accounts:
     global nc
     if (recent_applications + new_accounts) < 3:
         nc = 0.10 * 1
@@ -121,9 +121,10 @@ def credit_types():
 # return new_score
 
 # alexa play despacito
-def standard_credit_score(credit_types() + payment_history(), amount_owed_convert(), credit_history(), new_credit(recent_applications, new_accounts)):
+def standard_credit_score():
     score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit(recent_applications, new_accounts)))
     return score
-
+cttt = credit_types()
+payment_history()
 def standard_credit_score():
     scs = credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()
