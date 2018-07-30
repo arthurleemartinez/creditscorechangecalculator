@@ -1,5 +1,4 @@
 # import modules/packages/libraries
-from math import *
 
 # set your initial personal global variables
 # ph = percentage of on-time payments represented as a decimal integer in range 0-1
@@ -68,6 +67,7 @@ def credit_history():
 
 # how many new accounts you have opened, and many times you have applied for credit.
 def new_credit():
+    global nc
     if (recent_applications + new_accounts) < 3:
         nc = 0.10 * 1
     elif (recent_applications + new_accounts) < 7:
@@ -121,10 +121,8 @@ return ct
 # return new_score
 
 # alexa play despacito
-def standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts)):
+def standard_credit_score(credit_types() + payment_history(), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit(recent_applications, new_accounts)):
 
 score = 300 + (550 * (credit_types() + payment_history(ph) + amount_owed_convert(card_debt, car_loan, mortage, personal_loan) + credit_history(length_credit) + new_credit(recent_applications, new_accounts)))
 return score
-standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph),
-                      amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit),
-                      new_credit(recent_applications, new_accounts))
+standard_credit_score(credit_types(car_loan, personal_loan, card_debt, mortgage) + payment_history(ph), amount_owed_convert(card_debt, car_loan, mortage, personal_loan), credit_history(length_credit), new_credit())
