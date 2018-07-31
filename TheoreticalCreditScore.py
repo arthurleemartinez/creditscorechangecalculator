@@ -120,7 +120,14 @@ def credit_ratio():
     return ch1
 # converts payment history into component of new credit score equation
 def payment_history():
-    ph1 = .35 * ph
+    if ph > 0.99:
+        ph1 = 0.35 * ph
+    elif ph >= 0.98:
+        ph1 = 0.35 * ph * 0.75
+    elif ph >= 0.90:
+        ph1 = 0.35 * ph * 0.50:
+    elif ph < 0.90:
+        ph1 = 0.35 * ph * 0.25:
     return ph1
 # convert total debt to a number between 0 and 1 that will become component of new equation
 def amount_owed_convert():
@@ -180,7 +187,10 @@ def credit_types():
 # This function will generate your first estimated credit score
 def standard_credit_score():
     score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()))
+    removal1 = 550/payment_history()
+    score = 300 + ((credit_types() + pay
     return score
+    
 # Call functions to implement program
 user_interface()
 print("Your estimated credit score is %d" % standard_credit_score())
