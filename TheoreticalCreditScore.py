@@ -183,5 +183,6 @@ def standard_credit_score():
     return score
 # Call functions to implement program
 user_interface()
+print("Your estimated credit score is %d" % standard_credit_score())
 #def new_credit_score():
 #   scs = credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()
