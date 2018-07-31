@@ -4,7 +4,6 @@ import os
 print("This program will ask you a few questions about your financial situation, and calculate important information that MAY help you make more informed financial decisions.")
 cla = input("Do you have an outstanding car loan? (y/n): ")
 pla = input("Do you currently have an outstanding personal loan? (y/n): ")
-
 def get_clb():
     if cla == ("y" or "Y"):
         car_loan_balance = int(input("How much is left on your car note? (USD)?: "))
@@ -32,11 +31,9 @@ def confirmation():
     else:
         print('Your information will now be used to calculate certain information about your interest costs.')
     return boolean_answer
-def UserInterface():
+def user_interface():
     return confirmation()
-UserInterface()
-
-
+# function that turns the existence of a personal loan into a number value
 def pl():
     if not pla != (not (not 'y' and not 'Y')):
         plb = int(input("How much do you still owe on that personal loan (USD)? "))
@@ -67,10 +64,8 @@ def cl():
     return clc
 car_loan = cl()
 # if you have had card debt in past week use 1 cent so the function will know you have a card
-
 ph = php()
 mortgage = 0
-
 #personal_loan = 0
 new_accounts = 4
 # number of inquiries in past year
@@ -166,9 +161,11 @@ def credit_types():
     else:
         ct = 0.10 * 1
     return ct
+# This function will generate your first estimated credit score
 def standard_credit_score():
     score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()))
     return score
-
+# Call functions to implement program
+user_interface()
 #def new_credit_score():
 #   scs = credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()
