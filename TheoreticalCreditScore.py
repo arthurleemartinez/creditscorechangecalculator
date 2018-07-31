@@ -1,27 +1,51 @@
-# import modules/packages/libraries
-# set your initial personal global variables
-from typing import Any, Union
+import sys
+import os
 # Initialize User Interface
 print("This program will ask you a few questions about your financial situation, and calculate important information that MAY help you make more informed financial decisions.")
-#def UI():
 cla = input("Do you have an outstanding car loan? (y/n): ")
+pla = input("Do you currently have an outstanding personal loan? (y/n): ")
+
+def get_clb():
+    if cla == ("y" or "Y"):
+        car_loan_balance = int(input("How much is left on your car note? (USD)?: "))
+    else:
+        car_loan_balance = 0
+    return car_loan_balance
     #card_debt = 687
 cda = input("How much credit card debt do you currently have (USD)?: ")
+def restart_program():
+    #Restarts the current program. Note: this function does not return. Any cleanup action (like
+    #saving data) must be done before calling this function.
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+def confirmation():
+    print("Reviewing your information...")
+    print("You have ")
+    confirmation_answer = input("Is this information correct? (Answer y or n)")
+    if confirmation_answer == "y" or "Y":
+        boolean_answer = True
+    else:
+        boolean_answer = False
+    if boolean_answer is False:
+        print("Restarting shell..")
+        restart_program()
+    else:
+        print('Your information will now be used to calculate certain information about your interest costs.')
+    return boolean_answer
+def UserInterface():
+    return confirmation()
+UserInterface()
 
-def cd():
 
-    b = float(int(cda))
-    return b
 def pl():
-    a = input("Do you currently have an outstanding personal loan? (y/n): ")
-    if a == ('y' or 'Y'):
-        b = int(input("How much do you still owe on that personal loan (USD)? "))
-    elif a == ('n' or 'N'):
-        b = 0
+    if not pla != (not (not 'y' and not 'Y')):
+        plb = int(input("How much do you still owe on that personal loan (USD)? "))
+    elif pla == ('n' or 'N'):
+        plb: int = 0
     else:
         print("You entered an incorrect answer. You will now be prompted again." )
         pl()
-    return b
+    return plb
 personal_loan = pl()
 # ph = percentage of on-time payments represented as a decimal integer in range 0-1
 def php():
@@ -29,15 +53,15 @@ def php():
     b = float(a)
     c = b / 100
     return c
-card_debt = cd()
+card_debt = int(cda)
 #car_loan = 11187
 def cl():
     if cla == ('Y' or 'y'):
-        clb = input("How much is left on your car note? (USD)?: ")
+        clb = get_clb()
     else:
         clb = 0
     if clb > 0:
-        clc = int(b)
+        clc = int(clb)
     else:
         clc = 0
     return clc
@@ -75,10 +99,10 @@ def has_car_loan():
     return car
 def has_personal_loan():
     if personal_loan > 0:
-        pl = True
+        pl1 = True
     else:
-        pl = False
-    return pl
+        pl1 = False
+    return pl1
 # length of credit represented as ratio of itself to 25 years
 def credit_ratio():
     ch1 = (length_credit / 25)
