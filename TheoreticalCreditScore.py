@@ -10,6 +10,11 @@ def cd():
     a = input("How much credit card debt do you currently have (USD)?: ")
     b = int(a)
     return b
+def php():
+    a = input("Please enter your payment history percentage (omit symbol): ")
+    b = float(a)
+    c = b / 100
+    return c
 card_debt = cd()
 def cl():
     a = input("Do you have an outstanding car loan? (y/n): ")
@@ -26,11 +31,6 @@ def cl():
 car_loan = 11187
 mortgage = 0
 ph = php()
-def php():
-    a = input("Please enter your payment history percentage (omit symbol): ")
-    b = float(a)
-    c = b / 100
-    return c
 personal_loan = 0
 new_accounts = 4
 # number of inquiries in past year
