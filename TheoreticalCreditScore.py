@@ -1,37 +1,53 @@
 # import modules/packages/libraries
 # set your initial personal global variables
-# ph = percentage of on-time payments represented as a decimal integer in range 0-1
 from typing import Any, Union
 # Initialize User Interface
-def UI():
-    print("This program will ask you a few questions about your financial situation, and calculate important information that MAY help you make more informed financial decisions.")
-#card_debt = 687
+print("This program will ask you a few questions about your financial situation, and calculate important information that MAY help you make more informed financial decisions.")
+#def UI():
+cla = input("Do you have an outstanding car loan? (y/n): ")
+    #card_debt = 687
+cda = input("How much credit card debt do you currently have (USD)?: ")
+
 def cd():
-    a = input("How much credit card debt do you currently have (USD)?: ")
-    b = int(a)
+
+    b = float(int(cda))
     return b
+def pl():
+    a = input("Do you currently have an outstanding personal loan? (y/n): ")
+    if a == ('y' or 'Y'):
+        b = int(input("How much do you still owe on that personal loan (USD)? "))
+    elif a == ('n' or 'N'):
+        b = 0
+    else:
+        print("You entered an incorrect answer. You will now be prompted again." )
+        pl()
+    return b
+personal_loan = pl()
+# ph = percentage of on-time payments represented as a decimal integer in range 0-1
 def php():
     a = input("Please enter your payment history percentage (omit symbol): ")
     b = float(a)
     c = b / 100
     return c
 card_debt = cd()
+#car_loan = 11187
 def cl():
-    a = input("Do you have an outstanding car loan? (y/n): ")
-    if a == ('Y' or 'y'):
-        b = input("How much is left on your car note? (USD)?: ")
+    if cla == ('Y' or 'y'):
+        clb = input("How much is left on your car note? (USD)?: ")
     else:
-        b = 0
-    if b > 0:
-        c = int(b)
+        clb = 0
+    if clb > 0:
+        clc = int(b)
     else:
-        c = 0
-    return c
+        clc = 0
+    return clc
+car_loan = cl()
 # if you have had card debt in past week use 1 cent so the function will know you have a card
-car_loan = 11187
-mortgage = 0
+
 ph = php()
-personal_loan = 0
+mortgage = 0
+
+#personal_loan = 0
 new_accounts = 4
 # number of inquiries in past year
 recent_applications = 4
@@ -129,6 +145,6 @@ def credit_types():
 def standard_credit_score():
     score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()))
     return score
-payment_history()
+
 #def new_credit_score():
 #   scs = credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()
