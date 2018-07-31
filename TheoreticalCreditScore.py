@@ -2,47 +2,13 @@ from sys import argv, executable
 from os import execl
 
 # Initialize User Interface
-print(
-    "This program will ask you a few questions about your financial situation, and calculate important information that MAY help you make more informed financial decisions.")
+print("This program will ask you a few questions about your financial situation, and calculate important information that MAY help you make more informed financial decisions.")
 cla = input("Do you have an outstanding car loan? (y/n): ")
 pla = input("Do you currently have an outstanding personal loan? (y/n): ")
 # card_debt = 687
 cda = input("How much credit card debt do you currently have (USD)?: ")
 cda_num = int(cda)
-
-
-# ph = percentage of on-time payments represented as a decimal integer in range 0-1
-def php():
-    a = input("Please enter your payment history percentage (omit symbol): ")
-    if type(a) == int or float:
-        phpb = float(a)
-    else:
-        php()
-    phpc = phpb / 100
-    return phpc
-
-
-card_debt = int(cda)
-ph = php()
-ph_percentage = ph * 100
-
-
-# function that turns the existence of a personal loan into a number value
-def pl():
-    if not pla != (not (not 'y' and not 'Y')):
-        plb = int(input("How much do you still owe on that personal loan (USD)? "))
-    elif pla == ('n' or 'N'):
-        plb: int = 0
-    else:
-        print("You entered an incorrect answer. You will now be prompted again.")
-        pl()
-        pass
-    return plb
-
-
-personal_loan = pl()
-
-
+# obtain car loan balance
 def get_clb():
     if cla == ("y" or "Y"):
         # car_loan = 11187
@@ -50,15 +16,11 @@ def get_clb():
     else:
         car_loan_balance = 0
     return car_loan_balance
-
-
 def restart_program():
     # Restarts the current program. Note: this function does not return. Any cleanup action (like
     # saving data) must be done before calling this function.
     python = executable
     execl(python, python, *argv)
-
-
 def confirmation():
     print("Reviewing and displaying your information...")
     if personal_loan > 0:
@@ -97,6 +59,38 @@ def cl():
     else:
         clc = 0
     return clc
+
+
+# ph = percentage of on-time payments represented as a decimal integer in range 0-1
+def php():
+    a = input("Please enter your payment history percentage (omit symbol): ")
+    if type(a) == int or float:
+        phpb = float(a)
+    else:
+        php()
+    phpc = phpb / 100
+    return phpc
+# function that turns the existence of a personal loan into a number value
+def pl():
+    if not pla != (not (not 'y' and not 'Y')):
+        plb = int(input("How much do you still owe on that personal loan (USD)? "))
+    elif pla == ('n' or 'N'):
+        plb: int = 0
+    else:
+        print("You entered an incorrect answer. You will now be prompted again.")
+        pl()
+        pass
+    return plb
+card_debt = int(cda)
+ph = php()
+ph_percentage = ph * 100
+
+
+
+
+
+personal_loan = pl()
+
 
 
 car_loan = cl()
@@ -154,13 +148,13 @@ def credit_ratio():
 # converts payment history into component of new credit score equation
 def payment_history():
     if ph > 0.99:
-        ph1 = 0.35 * ph
+        ph1 = 0.35
     elif ph >= 0.98:
-        ph1 = 0.35 * ph * 0.75
+        ph1 = 0.35 * 0.75
     elif ph >= 0.90:
-        ph1 = 0.35 * ph * 0.50
+        ph1 = 0.35 * 0.50
     elif ph < 0.90:
-        ph1 = 0.35 * ph * 0.25
+        ph1 = 0.35 * 0.25
     return ph1
 
 
@@ -195,7 +189,7 @@ def new_credit() -> new_accounts:
 def credit_types():
     if (has_mortgage() == False) and (has_car_loan() == True) and (has_personal_loan() == True) and (
             has_card() == True):
-        ct = 0.10 * 0.75
+        ct = 0.10 * 0.75 * ct
     elif (has_mortgage() == True) and (has_car_loan() == False) and (has_personal_loan() == True) and (
             has_card() == True):
         ct = 0.10 * 0.75
