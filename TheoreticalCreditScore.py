@@ -62,7 +62,7 @@ def confirmation():
         print("Restarting shell..")
         restart_program()
     else:
-        print('Your information will now be used to calculate certain information about your interest costs.')
+        print('Your information will now be used to calculate certain information about your credit profile.')
     return boolean_answer
 def user_interface():
     return confirmation()
