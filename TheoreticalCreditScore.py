@@ -2,11 +2,35 @@
 # set your initial personal global variables
 # ph = percentage of on-time payments represented as a decimal integer in range 0-1
 from typing import Any, Union
-ph = 1
-# if you have had card debt in past 2 weeks use 1 cent so the function will know you have a card
-card_debt = 687
+# Initialize User Interface
+def UI():
+    print("This program will ask you a few questions about your financial situation, and calculate important information that MAY help you make more informed financial decisions.")
+#card_debt = 687
+def cd():
+    a = input("How much credit card debt do you currently have (USD)?: ")
+    b = int(a)
+    return b
+card_debt = cd()
+def cl():
+    a = input("Do you have an outstanding car loan? (y/n): ")
+    if a == ('Y' or 'y'):
+        b = input("How much is left on your car note? (USD)?: ")
+    else:
+        b = 0
+    if b > 0:
+        c = int(b)
+    else:
+        c = 0
+    return c
+# if you have had card debt in past week use 1 cent so the function will know you have a card
 car_loan = 11187
 mortgage = 0
+ph = php()
+def php():
+    a = input("Please enter your payment history percentage (omit symbol): ")
+    b = float(a)
+    c = b / 100
+    return c
 personal_loan = 0
 new_accounts = 4
 # number of inquiries in past year
