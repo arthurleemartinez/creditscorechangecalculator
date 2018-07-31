@@ -188,7 +188,6 @@ def credit_types():
 def standard_credit_score():
     score = 300 + (550 * (credit_types() + payment_history() + amount_owed_convert() + credit_history() + new_credit()))
     removal1 = 550/payment_history()
-    score = 300 + ((credit_types() + pay
     return score
     
 # Call functions to implement program
